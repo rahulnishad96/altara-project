@@ -8,14 +8,11 @@ const Calendar = ({ date }) => {
   const daysInMonth = lastDayOfMonth.getDate();
   const startingDayOfWeek = firstDayOfMonth.getDay();
 
-  console.log(firstDayOfMonth, lastDayOfMonth, daysInMonth, startingDayOfWeek);
-
   const calendarCells = [];
   let currentDay = 1;
 
   for (let row = 0; row < 6; row++) {
     const week = [];
-
     for (let day = 0; day < 7; day++) {
       if ((row === 0 && day < startingDayOfWeek) || currentDay > daysInMonth) {
         week.push(null);
@@ -24,7 +21,6 @@ const Calendar = ({ date }) => {
         currentDay++;
       }
     }
-
     calendarCells.push(week);
     if (currentDay > daysInMonth) {
       break;
