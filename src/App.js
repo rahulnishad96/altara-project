@@ -18,7 +18,7 @@ function App() {
         onChange={handleDateChange}
       />
       <p>Selected Date: {selectedDate}</p>
-      <Calendar date={new Date(selectedDate)}/>
+      { selectedDate && <Calendar date={new Date(selectedDate)}/>}
     </div>
   );
 }
